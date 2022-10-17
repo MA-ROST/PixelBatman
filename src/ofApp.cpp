@@ -4,7 +4,7 @@
 void ofApp::setup(){
     ofSetBackgroundColor(ofColor::white);
     ofSetWindowTitle(TITLE); // Set the window title
-    ofSetWindowShape(300, 300);
+    ofSetWindowShape(SCREEN_SIZE, SCREEN_SIZE);
 
     //Grid::calculatePixelSize();
 }

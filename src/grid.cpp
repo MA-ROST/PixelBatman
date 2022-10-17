@@ -25,7 +25,7 @@ void Grid::setFilled(bool isFilled)
 		case false:
 			ofNoFill();
 			ofSetColor(ofColor::gray);
-			ofSetLineWidth(2);
+			ofSetLineWidth(1);
 			break;
 	}
 }
