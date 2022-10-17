@@ -25,7 +25,9 @@ class ofApp : public ofBaseApp{
 
 		const string TITLE = "Pixel Batman";
 
+
 		array<array<Grid, Grid::GRID_SIZE>, Grid::GRID_SIZE> grid;
+		int totalGridSize{ Grid::GRID_SIZE * Grid::GRID_SIZE };
 
 		const int SCREEN_SIZE = Grid::calculateScreenSize();
 };
