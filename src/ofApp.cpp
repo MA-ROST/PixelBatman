@@ -4,7 +4,9 @@
 void ofApp::setup(){
     ofSetBackgroundColor(ofColor::white);
     ofSetWindowTitle(TITLE); // Set the window title
-    ofSetWindowShape(SCREEN_SIZE, SCREEN_SIZE);
+    ofSetWindowShape(300, 300);
+
+    //Grid::calculatePixelSize();
 }
 
 //--------------------------------------------------------------
@@ -17,7 +19,7 @@ void ofApp::draw(){
     ofNoFill();
     for (int x = 0; x < Grid::GRID_SIZE; ++x) {
         for (int y = 0; y < Grid::GRID_SIZE; ++y) {
-            grid[x][y].setupDrawing(x, y, {ofColor::gray}, false);
+            grid[x][y].setupDrawing(x, y, {ofColor::gray}, image[x][y]);
         }
     }
 }
@@ -74,5 +76,12 @@ void ofApp::gotMessage(ofMessage msg){
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
+
+}
+
+//--------------------------------------------------------------
+
+void ofApp::drawPixels(std::vector<std::vector<bool>> pixels)
+{
 
 }
