@@ -23,17 +23,19 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 
-		
-		void drawPixels(std::vector<std::vector<bool>> pixels);
-
 		const string TITLE = "Pixel Batman";
 
 		array<array<Grid, Grid::GRID_SIZE>, Grid::GRID_SIZE> grid;
-		int totalGridSize{ Grid::GRID_SIZE * Grid::GRID_SIZE };
 
 		const int SCREEN_SIZE = Grid::calculateScreenSize();
-		// A Vector of booleans that will decide if a index is filled or not
-		// If true the index will be filled with black. if not it will be filled with white
+		
+		/**
+		 * @brief A Vector of booleans that will decide if a index is filled or not.
+		 * If true the index will be filled with black. if not it will be filled with white.
+		 * This boolean is used to draw a picture
+		 *
+		 * True = Black, False = White
+		 */
 		std::vector<std::vector<bool>> image{
 			{false, false, false, false, false, false, false, false, false},// 0
 			{false, false, false, false, false, false, false, false, false},// 1
@@ -45,6 +47,8 @@ class ofApp : public ofBaseApp{
 			{false, false, false, false, false, false, false, false, false},// 7
 			{false, false, false, false, false, false, false, false, false} // 8
 		};
+
+		int totalGridSize{ Grid::GRID_SIZE * Grid::GRID_SIZE };
 		//Point<int> screenSize{Grid::calculateScreenSize()};
 		
 };
