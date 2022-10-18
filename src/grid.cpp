@@ -1,42 +1,31 @@
-﻿#include "grid.h"
+#include "grid.h"
 
-void Grid::setupDrawing(const int& x, const int& y, ofColor color, bool isFilled)
+void Grid::setupPixel (const int& x, const int& y, bool isFilled)
 {
-	setFilled(isFilled);
-	drawRectangle(x, y);
+	pixelSize = calculatePixelSize();
+	setStyle(isFilled);
+	ofDrawRectangle(pixelSize.x * x, pixelSize.y * y, pixelSize.x, pixelSize.y);
 }
 
-void Grid::drawRectangle(const int& x, const int& y) const
+void Grid::setStyle (bool state) const
 {
-	/*ofDrawRectangle(pixelSize.x * x, pixelSize.y * y, pixelSize.x, pixelSize.y);*/
-	ofDrawRectangle(PIXEL_SIZE * x, PIXEL_SIZE * y, PIXEL_SIZE, PIXEL_SIZE);
-}
-
-
-void Grid::setFilled(bool isFilled)
-{
-	m_isFilled = isFilled;
-	switch (m_isFilled)
-	{
-		case true:
-			ofFill();
-			ofSetColor(ofColor::black);
-			break;
-		case false:
-			ofNoFill();
-			ofSetColor(ofColor::gray);
-			ofSetLineWidth(1);
-			break;
+	ofFill();
+	switch (state) {
+	case true: ofSetColor(active);
+		break;
+	default:
+		ofNoFill();
+		ofSetColor(inactive);
+		break;
 	}
 }
 
-int Grid::calculateScreenSize()
+Point<float> Grid::calculatePixelSize ()
 {
-	return PIXEL_SIZE * GRID_SIZE;
-}
+	Point <float> output{
+		static_cast <float> (ofGetWidth()) / gridSize.x,
+		static_cast <float> (ofGetHeight()) / gridSize.y
+	};
 
-void calculatePixelSize()
-{
-	Grid::pixelSize.x = ofGetWidth() / Grid::grid_size.x;
-	Grid::pixelSize.y = ofGetHeight() / Grid::grid_size.y;
+	return output;
 }
