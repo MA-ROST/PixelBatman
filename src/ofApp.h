@@ -25,9 +25,9 @@ class ofApp : public ofBaseApp{
 
 		const string TITLE = "Pixel Batman";
 
-		array<array<Grid, Grid::GRID_SIZE>, Grid::GRID_SIZE> grid;
+		array<array<Grid, Grid::gridSize.x>, Grid::gridSize.y> grid;
 
-		const int SCREEN_SIZE = Grid::calculateScreenSize();
+		Point<int> screenSize = { 600, 600 };
 		
 		/**
 		 * \brief A Vector of booleans that will decide if a index is filled or not.
@@ -47,8 +47,4 @@ class ofApp : public ofBaseApp{
 			{false, false, false, false, false, false, false, false, false},// 7
 			{false, false, false, false, false, false, false, false, false} // 8
 		};
-
-		int totalGridSize{ Grid::GRID_SIZE * Grid::GRID_SIZE };
-		//Point<int> screenSize{Grid::calculateScreenSize()};
-		
 };
