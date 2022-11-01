@@ -30,7 +30,7 @@ class ofApp : public ofBaseApp{
 		Point<int> screenSize = { 600, 600 };
 		
 		/**
-		 * \brief A Vector of booleans that will decide if a index is filled or not.
+		 * @brief A Vector of booleans that will decide if a index is filled or not.
 		 * If true the index will be filled with black. if not it will be filled with white.
 		 * This boolean is used to draw a picture
 		 *
