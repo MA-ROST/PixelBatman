@@ -39,9 +39,9 @@ class ofApp : public ofBaseApp{
 		std::vector<std::vector<bool>> image{
 			{false, false, false, false, false, false, false, false, false},// 0
 			{false, false, false, false, false, false, false, false, false},// 1
-			{false, true, true, true, true, true, true, true, false},		  // 2
+			{false, true, true, true, true, true, true, true, false},	// 2
 			{false, false, true, false, true, false, false, true, false},   // 3
-			{false, false, true, true, true, true, false, true, false},	  // 4
+			{false, false, true, true, true, true, false, true, false},	// 4
 			{false, false, true, false, true, false, false, true, false},   // 5
 			{false, true, true, true, true, true, true, true, false},       // 6
 			{false, false, false, false, false, false, false, false, false},// 7
