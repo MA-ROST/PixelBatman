@@ -11,7 +11,8 @@ void Grid::setStyle (bool state) const
 {
 	ofFill();
 	switch (state) {
-	case true: ofSetColor(active);
+	case true: 
+		ofSetColor(active);
 		break;
 	default:
 		ofNoFill();
